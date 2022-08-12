@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+[class*="col-"] {
+  background: lightgray;
+  outline: 1px solid gray;
+  float: left;
+  padding: 0 $grid-gutter;
+  margin-bottom: 20px;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: 100% / $grid-columns * $i;
+  }
+}

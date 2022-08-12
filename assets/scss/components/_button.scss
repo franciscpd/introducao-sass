@@ -1,0 +1,30 @@
+$buttons: (
+  "primary" $primary $white,
+  "danger" $danger $white,
+  "success" $success $white,
+  "secondary" $secondary $black
+);
+
+.btn {
+  all: unset;
+  color: #fafafa;
+  background-color: #1a1a1a;
+  height: 40px;
+  padding: 5px 10px;
+  transition: background 0.6s ease-in;
+  width: fit-content;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+
+  @each $name, $bg, $color in $buttons {
+    &--#{$name} {
+      background-color: $bg;
+      color: $color;
+
+      &:hover {
+        background-color: darken($bg, 10%);
+      }
+    }
+  }
+}
